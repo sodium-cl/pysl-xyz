@@ -1,11 +1,12 @@
 <script>
   import "../app.css";
+  /** @type {{children?: import('svelte').Snippet}} */
+  let { children } = $props();
 </script>
 
 <svelte:head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Unica+One&display=swap" rel="stylesheet">
 </svelte:head>
 <div class="bg-emerald-400 font-display">
   <header class="flex justify-between items-center px-2 py-2 relative">
@@ -34,5 +35,5 @@
       <span class="text-xl">log.</span></a>
     </nav>
   </header>
-  <slot />
+  {@render children?.()}
 </div> 

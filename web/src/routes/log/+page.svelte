@@ -1,5 +1,6 @@
 <script>
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
   let date = function dateParser(date) {
     const parsedDate = new Date(date);
     const options = {
