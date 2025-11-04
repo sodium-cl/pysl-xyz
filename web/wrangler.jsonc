@@ -1,0 +1,16 @@
+{
+  "name": "pysl-xyz",
+  "account_id": "a6d4eb7e91b23ed2ebd1a179bdc15aff",
+  "main": "./.cloudflare/worker.js",
+  "assets": {
+    "directory": ".cloudflare/public",
+    "binding": "ASSETS", // Exclude this if you don't have a `main` key configured.
+  },
+  "build": {
+    "command": "npm run build",
+  },
+  "vars": {
+    "CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV": "true",
+  },
+  "compatibility_date": "2025-10-04",
+}
