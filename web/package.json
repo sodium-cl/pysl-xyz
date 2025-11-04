@@ -24,9 +24,9 @@
 	"type": "module",
 	"dependencies": {
 		"@sanity/client": "^7.12.0",
-    "@sanity/image-url": "^1.2.0",
-    "@tailwindcss/vite": "^4.1.14",
-    "bits-ui": "^2.14.0",
-    "tailwindcss": "^4.1.14"
+		"@sanity/image-url": "^1.2.0",
+		"@tailwindcss/vite": "^4.1.14",
+		"bits-ui": "^2.14.0",
+		"tailwindcss": "^4.1.14"
 	}
 }
