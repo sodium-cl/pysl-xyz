@@ -1,5 +1,6 @@
 <script>
-  export let data;
+  /** @type {{data: any}} */
+  let { data } = $props();
   let style = function styleParser(styles) {
     let styleData = "";
     if (styles.includes("em")) {
