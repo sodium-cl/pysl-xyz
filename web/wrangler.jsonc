@@ -10,7 +10,9 @@
     "command": "npm run build",
   },
   "vars": {
-    "CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV": "true",
+    "PUBLIC_PROJECT_ID": "1vi20eny",
+    "PUBLIC_DATASET": "production",
+    "PUBLIC_API_VERSION": "v2025-11-04"
   },
   "compatibility_date": "2025-10-04",
 }
