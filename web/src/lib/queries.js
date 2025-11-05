@@ -30,6 +30,16 @@ export const homePageDetails = (slug) =>
   "subtitle": subtitle,
   "details": details
 }`;
+export const defaultPageDetails = (slug) =>
+  `*[_type == "defaultPage" && slug.current == "` +
+  slug +
+  `"]{
+  "title": title,
+  "slug": slug.current,
+  "imageUrl": logo.asset->url,
+  "subtitle": subtitle,
+  "details": details
+}`;
 export const siteNavDetails = `*[_type == "navigation" && title == "Site"] {
  "name":  navItems[].navName,
  "imageURL":  navItems[].asset->url,

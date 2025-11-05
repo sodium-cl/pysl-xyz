@@ -7,6 +7,7 @@
 <svelte:head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>P Y S L</title>
 </svelte:head>
 <div class="bg-emerald-400 font-display">
     <header class="flex justify-between items-center px-2 py-2 relative">

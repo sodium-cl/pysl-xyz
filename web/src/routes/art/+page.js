@@ -1,9 +1,7 @@
 import { client } from "$lib/sanity";
-import { listOfPosts as query } from "$lib/queries";
 import { defaultPageDetails as defaultPageDetailsQuery } from "$lib/queries";
 export async function load() {
   return {
-    posts: await client.fetch(query),
-    defaultPageItems: await client.fetch(defaultPageDetailsQuery('log'))
+    defaultPageItems: await client.fetch(defaultPageDetailsQuery('art')),
   };
 }
