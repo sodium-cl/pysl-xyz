@@ -4,15 +4,13 @@
   "main": "./.cloudflare/worker.js",
   "assets": {
     "directory": ".cloudflare/public",
-    "binding": "ASSETS", // Exclude this if you don't have a `main` key configured.
+    "binding": "ASSETS" // Exclude this if you don't have a `main` key configured.
   },
   "build": {
-    "command": "npm run build",
+    "command": "npm run build"
   },
   "vars": {
-    "PUBLIC_PROJECT_ID": "1vi20eny",
-    "PUBLIC_DATASET": "production",
-    "PUBLIC_API_VERSION": "v2025-11-04"
+    "CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV": "true"
   },
-  "compatibility_date": "2025-10-04",
+  "compatibility_date": "2025-10-04"
 }
