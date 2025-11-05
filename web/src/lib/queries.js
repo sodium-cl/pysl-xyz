@@ -31,18 +31,18 @@ export const landingPageDetails = (slug) =>
   "subtitle": subtitle,
   "details": details
 }`;
-export const navDetails = `*[_type == "navigation"] {
+export const siteNavDetails = `*[_type == "navigation" && title == "Site"] {
  "name":  navItems[].navName,
  "imageURL":  navItems[].asset->url,
  "path": navItems[].navPath,
 }`;
-export const socialMediaDetails = `*[_type == "navigation" && title == "Social Media"] {
+export const socialMediaNavDetails = `*[_type == "navigation" && title == "Social Media"] {
  "name":  navItems[].navName,
  "imageURL":  navItems[].asset->url,
  "path": navItems[].navPath,
 }`;
-export const SiteDetails = `*[_type == "navigation" && title == "Site"] {
- "name":  navItems[].navName,
- "imageURL":  navItems[].asset->url,
- "path": navItems[].navPath,
-}`;
+// export const SiteDetails = `*[_type == "navigation" && title == "Site"] {
+//  "name":  navItems[].navName,
+//  "imageURL":  navItems[].asset->url,
+//  "path": navItems[].navPath,
+// }`;
