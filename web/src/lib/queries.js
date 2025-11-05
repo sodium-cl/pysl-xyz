@@ -20,14 +20,13 @@ export const postDetails = (slug) =>
     _type != 'reference' => @,
      }
   }`;
-export const landingPageDetails = (slug) =>
-  `*[_type == "landingPage" && slug.current == "` +
+export const homePageDetails = (slug) =>
+  `*[_type == "homePage" && slug.current == "` +
   slug +
   `"]{
   "title": title,
   "slug": slug.current,
   "imageUrl": logo.asset->url,
-  "logocode": logocode,
   "subtitle": subtitle,
   "details": details
 }`;
@@ -41,8 +40,8 @@ export const socialMediaNavDetails = `*[_type == "navigation" && title == "Socia
  "imageURL":  navItems[].asset->url,
  "path": navItems[].navPath,
 }`;
-// export const SiteDetails = `*[_type == "navigation" && title == "Site"] {
-//  "name":  navItems[].navName,
-//  "imageURL":  navItems[].asset->url,
-//  "path": navItems[].navPath,
-// }`;
+export const brandNavDetails = `*[_type == "navigation" && title == "Brand"] {
+ "name":  navItems[].navName,
+ "imageURL":  navItems[].asset->url,
+ "path": navItems[].navPath,
+}`;
