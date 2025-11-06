@@ -10,11 +10,16 @@
                 class="text-2xl font-semibold flex justify-center items-center"
             >
                 <span class="px-2">
-                    <img class="w-6 h-6" src={homePageItem.imageUrl} alt={homePageItem.title} />
+                    <img
+                        class="w-6 h-6"
+                        src={homePageItem.imageUrl}
+                        alt={homePageItem.title}
+                    />
                 </span>
                 <span class="text-center">{homePageItem.subtitle}</span></span
-            ><span class="text-center"
-                ><br /><PortableText value={homePageItem.details} /></span>
+            ><span class="text-center text-xl"
+                ><br /><PortableText value={homePageItem.details} /></span
+            >
         </p>
     {/each}
 </div>
