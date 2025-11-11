@@ -17,21 +17,21 @@
     {/each}
 </div>
 <div
-    class="h-[71vh] flex flex-col md:flex-row justify-center items-center p-20"
+    class="min-h-[71vh] grid grid-cols-1 md:grid-cols-3 p-20 items-center"
 >
     {#each data.workListItems as workListItem}
         <div
-            class="flex flex-col items-start bg-green-300 p-4 m-4 rounded-2xl w-[85w] md:w-[20vw] h-[25vh]"
+            class="grid grid-cols-1 md:grid-cols-3 items-center bg-green-300 p-4 m-4 rounded-2xl w-[85w] md:w-[25vw] h-[25vh]"
         >
             <img
-                class="w-24 p-2 h-auto"
+                class="w-16 h-auto col-span-1"
                 src={workListItem.workLogo}
                 alt={workListItem.title}
             />
-            <span class="tracking-widest text-4xl p-2 w-full"
+            <span class="tracking-widest text-2xl col-span-2"
                 >{workListItem.title}.</span
-            ><span class="text-xs font-bold p-2"
-                >{workListItem.startDate}&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;{workListItem.endDateOrPresent}</span
+            ><span class="col-span-full text-xs font-bold p-2"
+                >{workListItem.startDate}&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;{workListItem.endDateOrPresent}</span
             >
         </div>
     {/each}
