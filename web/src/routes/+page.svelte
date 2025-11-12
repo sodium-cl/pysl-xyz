@@ -3,7 +3,7 @@
     import { PortableText } from "@portabletext/svelte";
 </script>
 
-<div class="mt-[5vh] h-[60vh] flex justify-center items-center p-10">
+<div class="mt-[5vh] h-[55vh] flex justify-center items-center p-10">
     {#each data.homePageItems as homePageItem}
         <p class="tracking-widest text-4xl flex flex-col">
             <span

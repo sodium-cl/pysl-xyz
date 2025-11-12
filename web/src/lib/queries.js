@@ -62,7 +62,7 @@ export const workList = `*[_type == "work"]{
   "endDateOrPresent": endDateOrPresent,
   "workLogo": workLogo.asset->url,
   "workDetails": workDetails
-}`;
+}  | order(startDate desc)`;
 export const workDetails = (slug) =>
   `*[_type == "work" && slug.current == "` +
   slug +
