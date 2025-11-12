@@ -1,5 +1,12 @@
 <script>
     let { data } = $props();
+    function diff_years(startDate, endDate) {
+        var dt1 = new Date(startDate);
+        if
+        var diff = dt2.getTime() - dt1.getTime();
+        diff /= 1000 * 60 * 60 * 24; // Convert milliseconds to days
+        return Math.abs(Math.round(diff / 365.25)); // Divide by average days in a year
+    }
 </script>
 
 <div class="mt-[3vh] h-[15vh] flex justify-center items-center p-10">
