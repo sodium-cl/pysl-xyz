@@ -55,3 +55,22 @@ export const brandNavDetails = `*[_type == "navigation" && title == "Brand"] {
  "imageURL":  navItems[].asset->url,
  "path": navItems[].navPath,
 }`;
+export const workList = `*[_type == "work"]{
+  "title": title,
+  "slug": slug.current,
+  "startDate": startDate,
+  "endDateOrPresent": endDateOrPresent,
+  "workLogo": workLogo.asset->url,
+  "workDetails": workDetails
+}  | order(startDate desc)`;
+export const workDetails = (slug) =>
+  `*[_type == "work" && slug.current == "` +
+  slug +
+  `"]{
+  "title": title,
+  "slug": slug.current,
+  "startDate": startDate,
+  "endDateOrPresent": endDateOrPresent,
+  "workLogo": workLogo.asset->url,
+  "workDetails": workDetails
+}`;

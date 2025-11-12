@@ -15,7 +15,7 @@
             {#each brandNavItem.path as brandNavItemPath, index}
                 <a
                     href={brandNavItemPath}
-                    class="fixed font-brand font-bold text-2xl tracking-widest px-2 flex justify-center items-center top-0 left-0 right-0 w-screen h-[5vh] bg-emerald-400"
+                    class="fixed font-brand font-bold text-2xl tracking-widest px-2 flex justify-center items-center top-0 left-0 right-0 w-screen h-[5vh] bg-emerald-500"
                 >
                     <img
                         class="w-5 h-5"

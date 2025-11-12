@@ -1,12 +1,57 @@
 <script>
-  let { data } = $props();
-  import InProgressBlock from "$lib/components/InProgressBlock.svelte";
+    let { data } = $props();
+    function diffYears(startDate, endDate) {
+        var dt1 = new Date(startDate);
+        if (endDate[0].toLowerCase() === "present") {
+            var dt2 = new Date();
+        } else {
+            var dt2 = new Date(endDate);
+        }
+        var diff = dt2.getTime() - dt1.getTime();
+        diff /= 1000 * 60 * 60 * 24; // Convert milliseconds to days
+        return Math.abs(Math.round(diff / 365.25)); // Divide by average days in a year
+    }
 </script>
-<div class="mt-[5vh] h-[30vh] flex justify-center items-center p-10">
-  {#each data.defaultPageItems as defaultPageItem}
-<p class="tracking-widest text-4xl"><span class="text-2xl font-semibold flex items-center">
-<img class="w-6 h-6" src={defaultPageItem.imageUrl} alt={defaultPageItem.title} />
-<span>{defaultPageItem.title}.</span></span><br/>{defaultPageItem.subtitle}</p>
-{/each}
+
+<div class="mt-[5vh] h-[15vh] flex justify-center items-center p-5">
+    {#each data.defaultPageItems as defaultPageItem}
+        <div class="tracking-widest text-4xl p-5">
+            <div class="text-2xl font-semibold flex items-center">
+                <img
+                    class="w-6 h-6"
+                    src={defaultPageItem.imageUrl}
+                    alt={defaultPageItem.title}
+                />
+                <div>{defaultPageItem.title}.</div>
+            </div>
+            {defaultPageItem.subtitle}
+        </div>
+    {/each}
 </div>
-<InProgressBlock />
+<div
+    class="mb-[10vh] min-h-[70vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 md:p-8 items-center-safe"
+>
+    {#each data.workListItems as workListItem}
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-300 p-4 m-4 rounded-2xl w-72 md:w-80 lg:w-96 h-[25vh]"
+        >
+            <img
+                class="w-12 md:w-16 h-auto col-span-full place-self-center"
+                src={workListItem.workLogo}
+                alt={workListItem.title}
+            />
+            <div
+                class="tracking-widest text-xl md:text-2xl col-span-full place-self-center text-center font-bold"
+            >
+                {workListItem.title}.
+            </div>
+            <div class="col-span-full place-self-center text-xs">
+                {diffYears(
+                    workListItem.startDate,
+                    workListItem.endDateOrPresent,
+                )} years {#if workListItem.endDateOrPresent[0].toLowerCase() === "present"}and
+                    running{/if}
+            </div>
+        </div>
+    {/each}
+</div>
