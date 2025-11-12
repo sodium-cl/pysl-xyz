@@ -15,16 +15,18 @@
 
 <div class="mt-[5vh] h-[15vh] flex justify-center items-center p-5">
     {#each data.defaultPageItems as defaultPageItem}
-        <div class="tracking-widest text-4xl p-5">
-            <div class="text-2xl font-semibold flex items-center">
+        <div class="tracking-widest p-5">
+            <div class="flex items-center">
                 <img
                     class="w-6 h-6"
                     src={defaultPageItem.imageUrl}
                     alt={defaultPageItem.title}
                 />
-                <div>{defaultPageItem.title}.</div>
+                <div class="text-xl md:text-2xl font-semibold">
+                    {defaultPageItem.title}.
+                </div>
             </div>
-            {defaultPageItem.subtitle}
+            <div class="text-2xl md:text-4xl">{defaultPageItem.subtitle}</div>
         </div>
     {/each}
 </div>
