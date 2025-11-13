@@ -31,11 +31,11 @@
     {/each}
 </div>
 <div
-    class="mb-[10vh] min-h-[70vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 md:p-8 items-center-safe"
+    class="mb-[10vh] min-h-[70vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 items-center-safe"
 >
     {#each data.workListItems as workListItem}
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-300 p-4 m-4 rounded-2xl w-72 md:w-80 lg:w-96 h-[25vh]"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-300 p-4 m-4 rounded-2xl w-72 h-72"
         >
             <img
                 class="w-12 md:w-16 h-auto col-span-full place-self-center"

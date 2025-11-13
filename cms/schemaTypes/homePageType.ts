@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const homePageType = defineType({
   name: 'homePage',
@@ -10,10 +10,6 @@ export const homePageType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'subtitle',
-      type: 'string',
-    }),
-    defineField({
       name: 'slug',
       type: 'slug',
       options: {
@@ -22,9 +18,29 @@ export const homePageType = defineType({
       },
     }),
     defineField({
-      name: 'details',
+      name: 'introText',
+      type: 'string',
+    }),
+    defineField({
+      name: 'highlightItems',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{
+        type: 'object', fields: [
+          {
+            title: 'Name',
+            name: 'name',
+            type: 'string'
+          },
+          {
+            title: 'Icon',
+            name: 'icon',
+            type: 'image',
+            options: {
+              accept: 'image/svg+xml', // Specify SVG file type
+            },
+          },
+        ]
+      }],
     }),
     defineField({
       name: 'logo',

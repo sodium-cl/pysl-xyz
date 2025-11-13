@@ -27,7 +27,9 @@ export const homePageDetails = (slug) =>
   "title": title,
   "slug": slug.current,
   "imageUrl": logo.asset->url,
-  "subtitle": subtitle,
+  "introText": introText,
+  "highlightItemImages": highlightItems[].icon.asset->url,
+  "highlightItemNames": highlightItems[].name,
   "details": details
 }`;
 export const defaultPageDetails = (slug) =>
@@ -74,3 +76,11 @@ export const workDetails = (slug) =>
   "workLogo": workLogo.asset->url,
   "workDetails": workDetails
 }`;
+export const artGallery = `*[_type == "artGallery"]{
+  "title": title,
+  "slug": slug.current,
+  "updateDate": updateDate,
+  "toolsUsed": toolsUsed,
+  "artAssetURL": artAsset.asset->url,
+  "artDetails": artDetails
+}  | order(updateDate desc)`;
