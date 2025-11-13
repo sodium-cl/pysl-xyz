@@ -27,7 +27,9 @@ export const homePageDetails = (slug) =>
   "title": title,
   "slug": slug.current,
   "imageUrl": logo.asset->url,
-  "subtitle": subtitle,
+  "introText": introText,
+  "highlightItemImages": highlightItems[].icon.asset->url,
+  "highlightItemNames": highlightItems[].name,
   "details": details
 }`;
 export const defaultPageDetails = (slug) =>

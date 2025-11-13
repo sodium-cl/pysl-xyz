@@ -1,6 +1,5 @@
 <script>
     let { data } = $props();
-    import { PortableText } from "@portabletext/svelte";
 </script>
 
 <div class="mt-[5vh] h-[55vh] flex justify-center items-center p-10">
@@ -16,21 +15,31 @@
                         alt={homePageItem.title}
                     />
                 </div>
-                <div class="text-center">{homePageItem.subtitle}</div>
+                <div class="text-center">{homePageItem.introText}</div>
             </div>
             <div class="text-center text-xl mt-12">
-                <PortableText value={homePageItem.details} />
+               {#each homePageItem.highlightItemNames as highlightItemName, index}
+                   {#if (index+1) % 2 === 0}<div class="my-2 font-mono italic">{highlightItemName}</div>
+                   {:else if (index+1) % 3 === 0}<div class="my-2 font-mono font-bold">{highlightItemName}</div>
+                   {:else}<div class="my-2 font-brand uppercase">{highlightItemName}</div>
+                   {/if}
+                   <div class="flex justify-center items-center"><img
+                        class="w-5 h-5"
+                        src={homePageItem.highlightItemImages[index]}
+                        alt={highlightItemName}
+                    /></div>
+                {/each}
             </div>
         </div>
     {/each}
 </div>
-<div class="h-[30vh] flex flex-col justify-top items-center p-20">
-    <span class="flex h-20">
+<div class="h-[30vh] flex flex-col justify-top items-center">
+    <span class="flex h-full justify-center items-center">
         {#each data.socialMediaNavItems as socialMediaNavItem}
             {#each socialMediaNavItem.path as path, index}
                 <a class="px-2 w-full" href={path} target="_blank"
                     ><img
-                        class="w-6 h-6"
+                        class="w-9 h-9"
                         src={socialMediaNavItem.imageURL[index]}
                         alt={socialMediaNavItem.name[index]}
                     /></a
