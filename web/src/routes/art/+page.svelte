@@ -1,9 +1,9 @@
 <script>
     let { data } = $props();
-    import InProgressBlock from "$lib/components/InProgressBlock.svelte";
+    import { PortableText } from "@portabletext/svelte";
 </script>
 
-<div class="mt-[5vh] h-[30vh] flex justify-center items-center p-10">
+<div class="mt-[5vh] h-[15vh] flex justify-center items-center p-10">
     {#each data.defaultPageItems as defaultPageItem}
         <div class="tracking-widest p-5">
             <div class="flex items-center">
@@ -20,4 +20,23 @@
         </div>
     {/each}
 </div>
-<InProgressBlock />
+<div
+    class="mb-[10vh] min-h-[70vh] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4 md:p-8 items-center-safe"
+>
+    {#each data.artGalleryItems as artGalleryItem}
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-100 p-4 m-4 rounded-2xl"
+        >
+            <img
+                class="col-span-full place-self-center"
+                src={artGalleryItem.artAsset}
+                alt={artGalleryItem.title}
+            />
+            <div
+                class="tracking-widest text-sm col-span-full place-self-center text-center font-bold"
+            >
+                <PortableText value={artGalleryItem.artDetails} />
+            </div>
+        </div>
+    {/each}
+</div>

@@ -74,3 +74,11 @@ export const workDetails = (slug) =>
   "workLogo": workLogo.asset->url,
   "workDetails": workDetails
 }`;
+export const artGallery = `*[_type == "artGallery"]{
+  "title": title,
+  "slug": slug.current,
+  "updateDate": updateDate,
+  "toolsUsed": toolsUsed,
+  "artAsset": artAsset.asset->url,
+  "artDetails": artDetails
+}  | order(updateDate desc)`;
