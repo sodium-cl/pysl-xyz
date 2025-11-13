@@ -25,7 +25,7 @@
 >
     {#each data.artGalleryItems as artGalleryItem}
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-100 p-4 m-4 rounded-2xl"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-100 p-4 m-4 rounded-xl"
         >
             <img
                 class="col-span-full"
