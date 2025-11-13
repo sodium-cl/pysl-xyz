@@ -5,22 +5,23 @@
 
 <div class="mt-[5vh] h-[55vh] flex justify-center items-center p-10">
     {#each data.homePageItems as homePageItem}
-        <p class="tracking-widest text-4xl flex flex-col">
-            <span
+        <div class="tracking-widest text-4xl flex flex-col">
+            <div
                 class="text-2xl font-semibold flex justify-center items-center"
             >
-                <span class="px-2">
+                <div class="px-2">
                     <img
                         class="w-6 h-6"
                         src={homePageItem.imageUrl}
                         alt={homePageItem.title}
                     />
-                </span>
-                <span class="text-center">{homePageItem.subtitle}</span></span
-            ><span class="text-center text-xl"
-                ><br /><PortableText value={homePageItem.details} /></span
-            >
-        </p>
+                </div>
+                <div class="text-center">{homePageItem.subtitle}</div>
+            </div>
+            <div class="text-center text-xl mt-12">
+                <PortableText value={homePageItem.details} />
+            </div>
+        </div>
     {/each}
 </div>
 <div class="h-[30vh] flex flex-col justify-top items-center p-20">
