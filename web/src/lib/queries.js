@@ -79,6 +79,6 @@ export const artGallery = `*[_type == "artGallery"]{
   "slug": slug.current,
   "updateDate": updateDate,
   "toolsUsed": toolsUsed,
-  "artAsset": artAsset.asset->url,
+  "artAssetURL": artAsset.asset->url,
   "artDetails": artDetails
 }  | order(updateDate desc)`;

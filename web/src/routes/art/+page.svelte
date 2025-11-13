@@ -28,8 +28,8 @@
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 place-self-center bg-green-100 p-4 m-4 rounded-2xl"
         >
             <img
-                class="col-span-full place-self-center"
-                src={artGalleryItem.artAsset}
+                class="col-span-full"
+                src='{artGalleryItem.artAssetURL}?fit=max&w=600'
                 alt={artGalleryItem.title}
             />
             <div
